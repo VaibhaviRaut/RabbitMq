@@ -1,4 +1,4 @@
 # RabbitMq
 Learning RabbitMq to understand the Client-Server Interaction
 
-![Alt text](/Users/vaibhaviraut/PycharmProjects/RabbitMq/Installation_PNGFolder/brewInstall.png?raw=true "Title")
+Check out the Installation_PNGFolder to see installations on macOS for brew and rabbitMq libraries.
