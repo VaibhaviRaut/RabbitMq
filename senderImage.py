@@ -68,7 +68,7 @@ class Image(object):
     def __init__(self, filename):
         self.filename = filename
 
-#Property Decorator
+    #Property Decorator
     @property
     def get(self):
         with open(self.filename, "rb") as f:
@@ -78,13 +78,19 @@ class Image(object):
 
 
 if __name__=='__main__':
+
     server = RabbitMqConfigure(queue='hello',
                                host='localhost',
                                routingKey='hello',
                                exchange='')
+
+    # call image class
+    image = Image(filename="/Users/vaibhaviraut/PycharmProjects/RabbitMq/111112.png")
+    data = image.get
+
     #to make code efficient
     with RabbitMq(server) as rabbitmq:
-        rabbitmq.publish(payload={"Data":22})
+        rabbitmq.publish(payload=data)
 
     '''
     rabbitmq = RabbitMq(server)

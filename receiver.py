@@ -42,9 +42,14 @@ class rabbitmqServer():
         Payload = body.decode("utf-8")
         Payload = ast.literal_eval(Payload)
         print(type(Payload))
-        print("Data received: {}".format(Payload))
+        with open("recevived.png","wb") as f:
+            f.write(Payload)
+
 
     def startServer(self):
+
+        # here you can write the code for database in case
+        # you want to store the data in a database
         self._channel.basic_consume(queue=self.server.queue,
                       on_message_callback=self.callback,
                       auto_ack=True)
